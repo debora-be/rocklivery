@@ -17,7 +17,7 @@ defmodule Rocklivery.Orders.Item do
             quantity: quantity
           }}
 
-  def build_item(_description, _category, _unity_price, _quantity) do
+  def build(_description, _category, _unity_price, _quantity) do
     {:error, "Invalid parameters"}
   end
       end
