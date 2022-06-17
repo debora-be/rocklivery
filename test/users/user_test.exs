@@ -3,6 +3,8 @@ defmodule Rocklivery.Users.UserTest do
 
   alias Rocklivery.Users.User
 
+  import Rocklivery.Factory
+
   describe "build/5" do
     test "when all parameters are valid, returns the user" do
       response =
@@ -14,15 +16,7 @@ defmodule Rocklivery.Users.UserTest do
           35
         )
 
-      expected_response =
-        {:ok,
-         %User{
-           address: "Guariba toda",
-           age: 35,
-           cpf: "12345678",
-           email: "debora@gmail.com",
-           name: "Debora"
-         }}
+      expected_response = {:ok, build(:user)}
 
       assert response == expected_response
     end
